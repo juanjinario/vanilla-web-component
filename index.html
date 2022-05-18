@@ -11,4 +11,9 @@
         }
     </style>
     <app-element name="Jhonny"><span>neco</span></app-element>
+    <script>
+        document.addEventListener("poc:message", (e) => {
+            console.log(e.detail.msg);
+        });
+    </script>
 </body>

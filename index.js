@@ -33,6 +33,14 @@ class AppElement extends HTMLElement {
 
     clickMe(e) {
         console.log(e);
+        const message = new CustomEvent("poc:message", {
+            // bubbles is for expand the event for the DOM
+            bubbles: true,
+            detail: {
+                msg: 'Hellow from inside'
+            }
+        });
+        this.dispatchEvent(message);
     }
 }
 
