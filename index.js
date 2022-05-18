@@ -24,8 +24,15 @@ class AppElement extends HTMLElement {
             </style>
             <slot></slot>
             <p part="paragraph">${ this.hello } ${ this.name }</p>
+            <button>Click me!</button>
         `;
         // this.textContent = 'webo';  Only for write text
+        this.button = this.shadowRoot.querySelector('button');
+        this.button.onclick = (e) => this.clickMe(e);
+    }
+
+    clickMe(e) {
+        console.log(e);
     }
 }
 
